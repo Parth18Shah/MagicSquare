@@ -1,14 +1,8 @@
-#Source Code to find/show the Magic Square for a certain order of matrix
-'''A magic square of order n is an arrangement of n^2 numbers, usually distinct integers, 
-in a square, such that the n numbers in all rows, all columns, 
-and both diagonals sum to the same constant. 
-A magic square contains the integers from 1 to n^2. '''
-
+#Source Code to show the Magic Square for a certain order of matrix
 #Function for odd order magic squares 
 def sq(n): 
   
-    # 2-D array with all  
-    # slots set to 0 
+    # 2-D array with all slots set to 0 
     ms = [[0 for x in range(n)] 
                       for y in range(n)] 
   
@@ -16,15 +10,15 @@ def sq(n):
     i = n / 2
     j = n - 1
       
-    # Fill the magic square 
-    # by placing values 
+    # Fill the magic square by placing values 
     num = 1
     while num <= (n * n): 
         if i == -1 and j == n:  
             j = n - 2
             i = 0
         else: 
-              
+            ''' At any time, if the row position becomes -1, it will wrap around to n-1. 
+                Similarly, if the column position becomes n, it will wrap around to 0.'''   
             # next number goes out of right side of square  
             if j == n: 
                 j = 0
